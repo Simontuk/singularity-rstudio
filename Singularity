@@ -31,6 +31,7 @@ From: nickjer/singularity-r
 
   # Install RStudio Server
   apt-get update
+  apt-get install -y libhdf5-dev \
   apt-get install -y --no-install-recommends \
     ca-certificates \
     wget \
