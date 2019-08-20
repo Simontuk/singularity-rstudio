@@ -1,8 +1,8 @@
 BootStrap: shub
-From: nickjer/singularity-r
+From: simontuk/singularity-r
 
 %labels
-  Maintainer Jeremy Nicklas
+  Maintainer Simon Steiger
   RStudio_Version 1.2.1335
 
 %help
@@ -30,27 +30,22 @@ From: nickjer/singularity-r
   export RSTUDIO_VERSION=1.2.1335
 
   # Install RStudio Server
-  apt-get update
-  apt-get install -y --no-install-recommends \
+  yum update
+  yum install -y \
     ca-certificates \
-    wget \
-    gdebi-core \
-    libhdf5-dev 
-  wget \
-    --no-verbose \
-    -O rstudio-server.deb \
-    "https://download2.rstudio.org/server/trusty/amd64/rstudio-server-${RSTUDIO_VERSION}-amd64.deb"
-  gdebi -n rstudio-server.deb
-  rm -f rstudio-server.deb
+    wget
+
+  wget --no-verbose \
+    -O rstudio-server.rpm \
+    https://download2.rstudio.org/server/centos6/x86_64/rstudio-server-rhel-${RSTUDIO_VERSION}-x86_64.rpm
+  yum install -y rstudio-server.rpm
+  rm -f rstudio-server.rpm
 
   # Add support for LDAP authentication
-  wget \
-    --no-verbose \
-    -O get-pip.py \
-    "https://bootstrap.pypa.io/get-pip.py"
-  python3 get-pip.py
-  rm -f get-pip.py
-  pip3 install ldap3
+  yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+  yum -y install python36u
+  yum -y install python36u-pip
+  pip3.6 install ldap3
 
   # Clean up
-  rm -rf /var/lib/apt/lists/*
+  yum clean 
