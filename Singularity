@@ -1,5 +1,5 @@
 BootStrap: shub
-From: simontuk/singularity-r
+From: Simontuk/singularity-r
 
 %labels
   Maintainer Simon Steiger
