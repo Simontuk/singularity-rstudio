@@ -48,4 +48,4 @@ From: simontuk/singularity-r
   pip3.6 install ldap3
 
   # Clean up
-  yum clean 
+  yum clean all
