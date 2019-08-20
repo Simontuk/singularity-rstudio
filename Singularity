@@ -47,5 +47,7 @@ From: Simontuk/singularity-r
   yum -y install python36u-pip
   pip3.6 install ldap3
 
+  #htop
+  yum install -y htop
   # Clean up
   yum clean all
