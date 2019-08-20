@@ -48,6 +48,6 @@ From: Simontuk/singularity-r
   pip3.6 install ldap3
 
   #htop
-  yum install -y htop
+  yum install -y htop ksh
   # Clean up
   yum clean all
